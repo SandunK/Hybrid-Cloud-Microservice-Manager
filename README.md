@@ -75,5 +75,6 @@ It recomended to use docker based deployment for alpha services in aws instances
 
 ## Additional inform
 
-> Note: Micro service spring project in this repo is only created for testings. You can have your own service. But application property file configuration should be as it is exept names and ips.
+> Note: Micro service spring project in this repo is only created for testings. You can have your own service. But application property file configuration should be as it is exept names and ips.        
+
 > Note: You can use Eureka client as it is. Only thing is ip and port numbers should match in loadbalancer and microservices
