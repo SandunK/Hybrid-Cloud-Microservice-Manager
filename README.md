@@ -73,7 +73,7 @@ It recomended to use docker based deployment for alpha services in aws instances
 7. Add this cronetab command to execute the start script at the server startup `@reboot sleep 20; /bin/bash /home/centos/start` into the file using `crontab -e`.
 
 
-## Additional inform
+## Additional info
 
 > Note: Micro service spring project in this repo is only created for testings. You can have your own service. But application property file configuration should be as it is exept names and ips.        
 
