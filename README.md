@@ -1,4 +1,4 @@
-# Cloud Microservice Manager
+# Hybrid Cloud Microservice Manager
 This project is to isolate your services that have heavy computational using cloud computing (Here we used AWS) with middle layer load balancing in a more economical way. This is a collection of microservices that contribute to the service discovery, load balancing and AWS instance management using _'Aws SDK for Java'_. 
 
 ## Content
