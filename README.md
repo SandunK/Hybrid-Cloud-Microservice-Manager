@@ -8,7 +8,7 @@ This document will consist of initial Setup of the sub components,
   - Alpha service on aws instance (Backtest service will be discussed)
   
 ## Eureka server registry
-Eureka server registry will keep track of the "Alpha services" that deployed and registered with eureka. Service instances sends heartbeat to the Eureka server registry to inform that they are available. Loadbalancer will take the "Alpha service" instance details when needed from Eureka server registry. Executable **server.jar** file will be used to deploy. 
+Eureka server registry will keep track of the microservices that deployed and registered with eureka. Service instances sends heartbeat to the Eureka server registry to inform that they are available. Loadbalancer will take the microservice instance details when needed from Eureka server registry. Executable **server.jar** file will be used to deploy. 
   1. On linux envirenment
         ```
         $ {path to the jar file}/server.jar 
@@ -18,7 +18,7 @@ Eureka server registry will be deployed on port **8761** by default. If you want
         $ {path to the jar file}/server.jar --server.port={port number}
         ```
 ## Load Balancer
- Load balancer should be configured on a server which available always since alpha requests directly trigger into the loadbalancer. That can be an os level service or service deployed on a docker container. Executable **loadbalancer.jar** file will be used to deploy.     
+ Load balancer should be configured on a server which available always since service requests directly trigger into the loadbalancer. That can be an os level service or service deployed on a docker container. Executable **loadbalancer.jar** file will be used to deploy.     
   
   1. Configure the envirenment
         - Install "awscli" on server 
@@ -35,7 +35,7 @@ Eureka server registry will be deployed on port **8761** by default. If you want
             aws_access_key_id={YOUR_ACCESS_KEY_ID}
             aws_secret_access_key={YOUR_SECRET_ACCESS_KEY}
             ```
-            > "aws_access_key_id" and "aws_secret_access_key" should be get from a user that have access to the aws instances which are using to host "Alpha service". [REFERENCES](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+            > "aws_access_key_id" and "aws_secret_access_key" should be get from a user that have access to the aws instances which are using to host the services. [REFERENCES](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
             
             > Instead of editing "credentials" file you can use aws-cli command ```$ aws configure --profile=loadBalancer``` and give access key and secret using bash.
             
@@ -53,7 +53,7 @@ Eureka server registry will be deployed on port **8761** by default. If you want
         
 ## Micro service on AWS instance
 
-It recomended to use docker based deployment for alpha services in aws instances. This document describes the steps of deploying `Alpha Backtest` service using docker image.
+It recomended to use docker based deployment for services in aws instances. This document describes the steps of deploying a service called `Backtest` using docker image.
     
 1. First install `aws-cli` on instance as before in loadbalancer configuration.
 2. Now execute `aws configure` command on bash and provide credential keys of the user that owns the aws repository that used to build the "Backtest" image.
